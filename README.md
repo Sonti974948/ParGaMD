@@ -2,10 +2,10 @@
 ParGaMD is a hybrid method that leverages the accelerated sampling of Gaussian Accelerated Molecular Dynamics (GaMD) and marries it with the excellent parallelization of the Weighted Ensemble (WE) framework, resulting in a powerful method that can speed up protein simulations. 
 
 Please follow the given steps in order to successfully perform a ParGaMD simulation: 
-1. Perform a conventional Molecular Dynamics (cMD) simulation to get the GaMD paramters (````gamd-restart.dat````)
-2. Store the ````.prmtop, .pdb and the gamd-restart.dat```` files in the common_files directory, and save the final trajectory of the cMD as ````bstate.rst````
+1. Perform a conventional Gaussian Accelarated Molecular Dynamics (cGaMD) simulation in the ````cMD```` folder by running ````sbatch run_cmd.sh```` to get the GaMD paramters (````gamd-restart.dat````)
+2. The ````run_WE.sh``` in the main directory takes care of copying ````gamd-restart.dat```` and ````bstate.rst```` into the required directories in the WE framework.
 3. Make sure that ````pcoord_len = nstlim/ntpr + 1```` in west.cfg (nstlim, ntpr are in common_files/md.in) 
-4. Run the ParGaMD simulation using run.sh as the submission script. (Please change the ````NODELOC```` in env.sh to the directory from where you're running the simulations)
+4. Run the ParGaMD simulation using ````run_WE.sh```` as the submission script. (Please change the ````NODELOC```` in env.sh to the directory from where you're running the simulations)
 5. After running the simulation, run the postprocessing to get the ````gamd.log and PC.dat```` (PC --> progress coordinate) files using ````run_data.sh```` (NOTE: Please submit ````run_data.sh```` on to the compute node and not on the login node as there may be memory allocation issues).
 6. For reweighting to get the free energy surface (FES):
    1. Get weights.dat from gamd.log using the command ````awk 'NR%1==0' gamd.log | awk '{print ($8+$7)/(0.001987*300)" " $2 " " ($8+$7)}' > weights.dat````
