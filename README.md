@@ -3,7 +3,7 @@ ParGaMD is a hybrid method that leverages the accelerated sampling of Gaussian A
 
 Please follow the given steps in order to successfully perform a ParGaMD simulation: 
 1. Perform a conventional Gaussian Accelarated Molecular Dynamics (cGaMD) simulation in the ````cMD```` folder by running ````sbatch run_cmd.sh```` to get the GaMD paramters (````gamd-restart.dat````)
-2. The ````run_WE.sh``` in the main directory takes care of copying ````gamd-restart.dat```` and ````bstate.rst```` into the required directories in the WE framework.
+2. The ````run_WE.sh```` in the main directory takes care of copying ````gamd-restart.dat```` and ````bstate.rst```` into the required directories in the WE framework.
 3. Make sure that ````pcoord_len = nstlim/ntpr + 1```` in west.cfg (nstlim, ntpr are in common_files/md.in) 
 4. Run the ParGaMD simulation using ````run_WE.sh```` as the submission script. (Please change the ````NODELOC```` in env.sh to the directory from where you're running the simulations)
 5. After running the simulation, run the postprocessing to get the ````gamd.log and PC.dat```` (PC --> progress coordinate) files using ````run_data.sh```` (NOTE: Please submit ````run_data.sh```` on to the compute node and not on the login node as there may be memory allocation issues).
