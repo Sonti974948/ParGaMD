@@ -1,0 +1,33 @@
+Updating system with the options from the configuration file
+Maximum wallclock time: 1 day, 23:30:00
+
+Thu Jan 30 01:04:04 2025
+Iteration 1 (20 requested)
+Beginning iteration 1
+24 segments remain in iteration 1 (24 total)
+1 of 1 (100.000000%) active bins are populated
+per-bin minimum non-zero probability:       1
+per-bin maximum probability:                1
+per-bin probability dynamic range (kT):     0
+per-segment minimum non-zero probability:   0.04
+per-segment maximum non-zero probability:   0.08
+per-segment probability dynamic range (kT): 0.693147
+norm = 1, error in norm = 0 (0*epsilon)
+Waiting for segments to complete...
+Iteration completed successfully
+Iteration wallclock: 0:12:44.285375, cputime: 0:06:59.527921
+
+
+Thu Jan 30 01:16:48 2025
+Iteration 2 (20 requested)
+Beginning iteration 2
+24 segments remain in iteration 2 (24 total)
+1 of 1 (100.000000%) active bins are populated
+per-bin minimum non-zero probability:       1
+per-bin maximum probability:                1
+per-bin probability dynamic range (kT):     0
+per-segment minimum non-zero probability:   0.04
+per-segment maximum non-zero probability:   0.08
+per-segment probability dynamic range (kT): 0.693147
+norm = 1, error in norm = 0 (0*epsilon)
+Waiting for segments to complete...

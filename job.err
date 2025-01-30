@@ -1,0 +1,717 @@
++ cd /home/sontisid/ParGaMD_MP/ParGaMD
++ source /home/sontisid/.bashrc
+/var/spool/slurmd/job680571/slurm_script: line 17: /home/sontisid/.bashrc: No such file or directory
++ module load cuda/11.8.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /software/modules/4.6.1/ucdhpc-20.04/libexec/modulecmd.tcl bash load cuda/11.8.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ module load amber/22
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /software/modules/4.6.1/ucdhpc-20.04/libexec/modulecmd.tcl bash load amber/22
+Module amber-22-ucdhpc-20.04 loaded.
+      AmberTools22 + Amber22
++ eval 'MODULES_LMPREREQ=slurm/23.02.7\&cuda/11.8.0:openmpi/4.1.5\&hwloc/2.9.3\&libevent/2.1.12-stable\&ucx/1.14.1\&pmix/4.2.6:amber/22\&cuda/11.8.0;' export 'MODULES_LMPREREQ;
+_LMFILES__modshare=/software/modules/4.6.1/ucdhpc-20.04/modulefiles/amber/22:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/cuda/11.8.0:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/hwloc/2.9.3:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/libevent/2.1.12-stable:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/ucx/1.14.1:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/slurm/23.02.7:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/pmix/4.2.6:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/openmpi/4.1.5:1;' export '_LMFILES__modshare;
+LOADEDMODULES_modshare=slurm/23.02.7:1:pmix/4.2.6:1:openmpi/4.1.5:1:amber/22:1:cuda/11.8.0:1:hwloc/2.9.3:1:libevent/2.1.12-stable:1:ucx/1.14.1:1;' export 'LOADEDMODULES_modshare;
+MODULES_LMPREREQ_modshare=slurm/23.02.7\&cuda/11.8.0:1:openmpi/4.1.5\&hwloc/2.9.3\&libevent/2.1.12-stable\&ucx/1.14.1\&pmix/4.2.6:1:amber/22\&cuda/11.8.0:1;' export 'MODULES_LMPREREQ_modshare;
+_LMFILES_=/software/modules/4.6.1/ucdhpc-20.04/modulefiles/cuda/11.8.0:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/slurm/23.02.7:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/hwloc/2.9.3:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/libevent/2.1.12-stable:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/ucx/1.14.1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/pmix/4.2.6:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/openmpi/4.1.5:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/amber/22;' export '_LMFILES_;
+LOADEDMODULES=cuda/11.8.0:slurm/23.02.7:hwloc/2.9.3:libevent/2.1.12-stable:ucx/1.14.1:pmix/4.2.6:openmpi/4.1.5:amber/22;' export 'LOADEDMODULES;
+source' '/software/amber/22/ucdhpc-20.04/amber.sh
+test' '0;'
+++ MODULES_LMPREREQ='slurm/23.02.7&cuda/11.8.0:openmpi/4.1.5&hwloc/2.9.3&libevent/2.1.12-stable&ucx/1.14.1&pmix/4.2.6:amber/22&cuda/11.8.0'
+++ export MODULES_LMPREREQ
+++ _LMFILES__modshare=/software/modules/4.6.1/ucdhpc-20.04/modulefiles/amber/22:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/cuda/11.8.0:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/hwloc/2.9.3:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/libevent/2.1.12-stable:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/ucx/1.14.1:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/slurm/23.02.7:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/pmix/4.2.6:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/openmpi/4.1.5:1
+++ export _LMFILES__modshare
+++ LOADEDMODULES_modshare=slurm/23.02.7:1:pmix/4.2.6:1:openmpi/4.1.5:1:amber/22:1:cuda/11.8.0:1:hwloc/2.9.3:1:libevent/2.1.12-stable:1:ucx/1.14.1:1
+++ export LOADEDMODULES_modshare
+++ MODULES_LMPREREQ_modshare='slurm/23.02.7&cuda/11.8.0:1:openmpi/4.1.5&hwloc/2.9.3&libevent/2.1.12-stable&ucx/1.14.1&pmix/4.2.6:1:amber/22&cuda/11.8.0:1'
+++ export MODULES_LMPREREQ_modshare
+++ _LMFILES_=/software/modules/4.6.1/ucdhpc-20.04/modulefiles/cuda/11.8.0:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/slurm/23.02.7:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/hwloc/2.9.3:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/libevent/2.1.12-stable:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/ucx/1.14.1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/pmix/4.2.6:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/openmpi/4.1.5:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/amber/22
+++ export _LMFILES_
+++ LOADEDMODULES=cuda/11.8.0:slurm/23.02.7:hwloc/2.9.3:libevent/2.1.12-stable:ucx/1.14.1:pmix/4.2.6:openmpi/4.1.5:amber/22
+++ export LOADEDMODULES
+++ source /software/amber/22/ucdhpc-20.04/amber.sh
++++ '[' -n /software/amber/22/ucdhpc-20.04/amber.sh ']'
++++ this_script=/software/amber/22/ucdhpc-20.04/amber.sh
++++++ dirname /software/amber/22/ucdhpc-20.04/amber.sh
+++++ cd /software/amber/22/ucdhpc-20.04
+++++ pwd
++++ export AMBERHOME=/software/amber/22/ucdhpc-20.04
++++ AMBERHOME=/software/amber/22/ucdhpc-20.04
++++ export PATH=/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04//bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin
++++ PATH=/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04//bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin
++++ '[' 1 = 1 ']'
++++ '[' -z /software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64 ']'
++++ export LD_LIBRARY_PATH=/software/amber/22/ucdhpc-20.04/lib:/software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64
++++ LD_LIBRARY_PATH=/software/amber/22/ucdhpc-20.04/lib:/software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64
++++ '[' 1 = 1 ']'
++++ '[' -z '' ']'
++++ export PERL5LIB=/software/amber/22/ucdhpc-20.04/lib/perl
++++ PERL5LIB=/software/amber/22/ucdhpc-20.04/lib/perl
++++ '[' 1 = 1 ']'
++++ '[' -z '' ']'
++++ export PYTHONPATH=/software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages
++++ PYTHONPATH=/software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages
++++ '[' 1 = 1 ']'
++++ export QUICK_BASIS=/software/amber/22/ucdhpc-20.04/AmberTools/src/quick/basis
++++ QUICK_BASIS=/software/amber/22/ucdhpc-20.04/AmberTools/src/quick/basis
+++ test 0
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ module load conda3/4.X
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /software/modules/4.6.1/ucdhpc-20.04/libexec/modulecmd.tcl bash load conda3/4.X
+Module conda3/4.X loaded.
+
+This module initializes a base conda install in your current shell environment.
+It takes care of `conda init`, and as such, will interfere with locally-installed 
+conda; if you have a local install, it should have warned you and failed to load.
+
+To view available environments, including your local environments and those 
+installed system-wide, use: 
+
+    conda env list
+
+To activate an environment, use: 
+
+    conda activate [ENVIRONMENT_NAME]
+
+To create your own environment, you can use either the `conda` or `mamba` command.
+`mamba` functions exactly the same as `conda`, and uses the same channels, while 
+solving and creating environments much more efficiently. For example, you could create 
+an environment containing python v3.10, pandas, and ipython with: 
+
+    mamba create -n my-pandas-env python=3.10 pandas ipython
+
+and activate it with `conda activate my-pandas-env`.
+
+For more information, see https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-environments.
++ eval 'MANPATH=/software/conda3/4.X/share/man:/software/openmpi/4.1.5/ucdhpc-20.04/share/man:/software/slurm/23.02.7/ucdhpc-20.04/share/man:::/opt/puppetlabs/puppet/share/man;' export 'MANPATH;
+_LMFILES_=/software/modules/4.6.1/ucdhpc-20.04/modulefiles/cuda/11.8.0:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/slurm/23.02.7:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/hwloc/2.9.3:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/libevent/2.1.12-stable:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/ucx/1.14.1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/pmix/4.2.6:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/openmpi/4.1.5:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/amber/22:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/conda3/4.X;' export '_LMFILES_;
+SETUPTOOLS_USE_DISTUTILS=stdlib;' export 'SETUPTOOLS_USE_DISTUTILS;
+LOADEDMODULES=cuda/11.8.0:slurm/23.02.7:hwloc/2.9.3:libevent/2.1.12-stable:ucx/1.14.1:pmix/4.2.6:openmpi/4.1.5:amber/22:conda3/4.X;' export 'LOADEDMODULES;
+MANPATH_modshare=:1:/software/slurm/23.02.7/ucdhpc-20.04/share/man:1:/software/openmpi/4.1.5/ucdhpc-20.04/share/man:1:/software/conda3/4.X/share/man:1:/opt/puppetlabs/puppet/share/man:1;' export 'MANPATH_modshare;
+_CE_CONDA=;' export '_CE_CONDA;
+_CE_M=;' export '_CE_M;
+CONDA_EXE=/share/software/conda3/4.13.0/bin/conda;' export 'CONDA_EXE;
+CONDA_MOD_ROOT=/software/conda3/4.X/;' export 'CONDA_MOD_ROOT;
+CONDA_PYTHON_EXE=/share/software/conda3/4.13.0/bin/python;' export 'CONDA_PYTHON_EXE;
+_LMFILES__modshare=/software/modules/4.6.1/ucdhpc-20.04/modulefiles/cuda/11.8.0:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/hwloc/2.9.3:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/libevent/2.1.12-stable:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/ucx/1.14.1:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/amber/22:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/slurm/23.02.7:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/conda3/4.X:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/pmix/4.2.6:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/openmpi/4.1.5:1;' export '_LMFILES__modshare;
+LOADEDMODULES_modshare=slurm/23.02.7:1:conda3/4.X:1:pmix/4.2.6:1:openmpi/4.1.5:1:cuda/11.8.0:1:hwloc/2.9.3:1:libevent/2.1.12-stable:1:ucx/1.14.1:1:amber/22:1;' export 'LOADEDMODULES_modshare;
+MODULES_LMSOURCESH=conda3/4.X\&bash\' '/software/conda3/4.X//shell-setup.bash\|set-function\' '__conda_activate\' '\{\}\|set-function\' '__conda_exe\' '\{\}\|set-function\' '__conda_hashr\' '\{\}\|set-function\' '__conda_reactivate\' '\{\}\|set-function\' 'conda\' '\{\}\|setenv\' '_CE_CONDA\' '\{\}\|setenv\' '_CE_M\' '\{\}\|setenv\' 'CONDA_EXE\' '/share/software/conda3/4.13.0/bin/conda\|setenv\' 'CONDA_PYTHON_EXE\' '/share/software/conda3/4.13.0/bin/python\|setenv\' 'CONDA_SHLVL\' '0;' export 'MODULES_LMSOURCESH;
+PATH=/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04//bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin;' export 'PATH;
+CONDA_SHLVL=0;' export 'CONDA_SHLVL;
+MODULES_LMSOURCESH_modshare=conda3/4.X\&bash\' '/software/conda3/4.X//shell-setup.bash\|set-function\' '__conda_activate\' '\{\}\|set-function\' '__conda_exe\' '\{\}\|set-function\' '__conda_hashr\' '\{\}\|set-function\' '__conda_reactivate\' '\{\}\|set-function\' 'conda\' '\{\}\|setenv\' '_CE_CONDA\' '\{\}\|setenv\' '_CE_M\' '\{\}\|setenv\' 'CONDA_EXE\' '/share/software/conda3/4.13.0/bin/conda\|setenv\' 'CONDA_PYTHON_EXE\' '/share/software/conda3/4.13.0/bin/python\|setenv\' 'CONDA_SHLVL\' '0:1;' export 'MODULES_LMSOURCESH_modshare;
+PATH_modshare=/usr/bin:1:/software/amber/22/ucdhpc-20.04/bin:1:/software/cuda/11.8.0/ucdhpc-20.04/bin:1:/usr/local/bin:1:/software/slurm/23.02.7/ucdhpc-20.04/bin:1:/software/openmpi/4.1.5/ucdhpc-20.04/bin:1:/software/hwloc/2.9.3/ucdhpc-20.04/bin:1:/software/modules/4.6.1/ucdhpc-20.04//bin:1:/software/conda3/4.X/condabin:1:/software/slurm/23.02.7/ucdhpc-20.04/sbin:1:/bin:1:/opt/puppetlabs/bin:1:/snap/bin:1:/software/conda3/4.X/bin:1:/sbin:1:/usr/sbin:1:/usr/games:1:/usr/local/sbin:1:/usr/local/games:1;' export 'PATH_modshare;
+__conda_hashr' '()' '{' if '[' -n '"${ZSH_VERSION:+x}"' '];' 'then
+' '\rehash;
+' 'else
+' if '[' -n '"${POSH_VERSION:+x}"' '];' 'then
+' ':;
+' 'else
+' '\hash' '-r;
+' 'fi;
+' 'fi;' '};' export '__conda_hashr;
+__conda_exe' '()' '{' '(' '"$CONDA_EXE"' '$_CE_M' '$_CE_CONDA' '"$@"' ');' '};' export '__conda_exe;
+conda' '()' '{' '\local' 'cmd="${1-__missing__}";
+' case '"$cmd"' in '
+' activate '|' 'deactivate)
+' __conda_activate '"$@"
+' ';;
+' install '|' update '|' upgrade '|' remove '|' 'uninstall)
+' __conda_exe '"$@"' '||' '\return;
+' '__conda_reactivate
+' ';;
+' '*)
+' __conda_exe '"$@"
+' ';;
+' 'esac;' '};' export 'conda;
+__conda_reactivate' '()' '{' '\local' 'ask_conda;
+' 'ask_conda="$(PS1="${PS1:-}"' __conda_exe shell.posix 'reactivate)"' '||' '\return;
+' '\eval' '"$ask_conda";
+' '__conda_hashr;' '};' export '__conda_reactivate;
+__conda_activate' '()' '{' if '[' -n '"${CONDA_PS1_BACKUP:+x}"' '];' 'then
+' 'PS1="$CONDA_PS1_BACKUP";
+' '\unset' 'CONDA_PS1_BACKUP;
+' 'fi;
+' '\local' 'ask_conda;
+' 'ask_conda="$(PS1="${PS1:-}"' __conda_exe shell.posix '"$@")"' '||' '\return;
+' '\eval' '"$ask_conda";
+' '__conda_hashr;' '};' export '__conda_activate;
+test' '0;'
+++ MANPATH=/software/conda3/4.X/share/man:/software/openmpi/4.1.5/ucdhpc-20.04/share/man:/software/slurm/23.02.7/ucdhpc-20.04/share/man:::/opt/puppetlabs/puppet/share/man
+++ export MANPATH
+++ _LMFILES_=/software/modules/4.6.1/ucdhpc-20.04/modulefiles/cuda/11.8.0:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/slurm/23.02.7:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/hwloc/2.9.3:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/libevent/2.1.12-stable:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/ucx/1.14.1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/pmix/4.2.6:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/openmpi/4.1.5:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/amber/22:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/conda3/4.X
+++ export _LMFILES_
+++ SETUPTOOLS_USE_DISTUTILS=stdlib
+++ export SETUPTOOLS_USE_DISTUTILS
+++ LOADEDMODULES=cuda/11.8.0:slurm/23.02.7:hwloc/2.9.3:libevent/2.1.12-stable:ucx/1.14.1:pmix/4.2.6:openmpi/4.1.5:amber/22:conda3/4.X
+++ export LOADEDMODULES
+++ MANPATH_modshare=:1:/software/slurm/23.02.7/ucdhpc-20.04/share/man:1:/software/openmpi/4.1.5/ucdhpc-20.04/share/man:1:/software/conda3/4.X/share/man:1:/opt/puppetlabs/puppet/share/man:1
+++ export MANPATH_modshare
+++ _CE_CONDA=
+++ export _CE_CONDA
+++ _CE_M=
+++ export _CE_M
+++ CONDA_EXE=/share/software/conda3/4.13.0/bin/conda
+++ export CONDA_EXE
+++ CONDA_MOD_ROOT=/software/conda3/4.X/
+++ export CONDA_MOD_ROOT
+++ CONDA_PYTHON_EXE=/share/software/conda3/4.13.0/bin/python
+++ export CONDA_PYTHON_EXE
+++ _LMFILES__modshare=/software/modules/4.6.1/ucdhpc-20.04/modulefiles/cuda/11.8.0:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/hwloc/2.9.3:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/libevent/2.1.12-stable:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/ucx/1.14.1:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/amber/22:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/slurm/23.02.7:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/conda3/4.X:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/pmix/4.2.6:1:/software/modules/4.6.1/ucdhpc-20.04/modulefiles/openmpi/4.1.5:1
+++ export _LMFILES__modshare
+++ LOADEDMODULES_modshare=slurm/23.02.7:1:conda3/4.X:1:pmix/4.2.6:1:openmpi/4.1.5:1:cuda/11.8.0:1:hwloc/2.9.3:1:libevent/2.1.12-stable:1:ucx/1.14.1:1:amber/22:1
+++ export LOADEDMODULES_modshare
+++ MODULES_LMSOURCESH='conda3/4.X&bash /software/conda3/4.X//shell-setup.bash|set-function __conda_activate {}|set-function __conda_exe {}|set-function __conda_hashr {}|set-function __conda_reactivate {}|set-function conda {}|setenv _CE_CONDA {}|setenv _CE_M {}|setenv CONDA_EXE /share/software/conda3/4.13.0/bin/conda|setenv CONDA_PYTHON_EXE /share/software/conda3/4.13.0/bin/python|setenv CONDA_SHLVL 0'
+++ export MODULES_LMSOURCESH
+++ PATH=/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04//bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin
+++ export PATH
+++ CONDA_SHLVL=0
+++ export CONDA_SHLVL
+++ MODULES_LMSOURCESH_modshare='conda3/4.X&bash /software/conda3/4.X//shell-setup.bash|set-function __conda_activate {}|set-function __conda_exe {}|set-function __conda_hashr {}|set-function __conda_reactivate {}|set-function conda {}|setenv _CE_CONDA {}|setenv _CE_M {}|setenv CONDA_EXE /share/software/conda3/4.13.0/bin/conda|setenv CONDA_PYTHON_EXE /share/software/conda3/4.13.0/bin/python|setenv CONDA_SHLVL 0:1'
+++ export MODULES_LMSOURCESH_modshare
+++ PATH_modshare=/usr/bin:1:/software/amber/22/ucdhpc-20.04/bin:1:/software/cuda/11.8.0/ucdhpc-20.04/bin:1:/usr/local/bin:1:/software/slurm/23.02.7/ucdhpc-20.04/bin:1:/software/openmpi/4.1.5/ucdhpc-20.04/bin:1:/software/hwloc/2.9.3/ucdhpc-20.04/bin:1:/software/modules/4.6.1/ucdhpc-20.04//bin:1:/software/conda3/4.X/condabin:1:/software/slurm/23.02.7/ucdhpc-20.04/sbin:1:/bin:1:/opt/puppetlabs/bin:1:/snap/bin:1:/software/conda3/4.X/bin:1:/sbin:1:/usr/sbin:1:/usr/games:1:/usr/local/sbin:1:/usr/local/games:1
+++ export PATH_modshare
+++ export __conda_hashr
+++ export __conda_exe
+++ export conda
+++ export __conda_reactivate
+++ export __conda_activate
+++ test 0
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ conda activate westpa-2.0
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate westpa-2.0
++ '[' -n '' ']'
++ local ask_conda
+++ PS1=
+++ __conda_exe shell.posix activate westpa-2.0
+++ /share/software/conda3/4.13.0/bin/conda shell.posix activate westpa-2.0
++ ask_conda='PS1='\''(westpa-2.0) '\''
+export PATH='\''/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin'\''
+export CONDA_PREFIX='\''/home/sontisid/.conda/envs/westpa-2.0'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''westpa-2.0'\''
+export CONDA_PROMPT_MODIFIER='\''(westpa-2.0) '\''
+export CONDA_EXE='\''/share/software/conda3/4.13.0/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/share/software/conda3/4.13.0/bin/python'\'''
++ eval 'PS1='\''(westpa-2.0) '\''
+export PATH='\''/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin'\''
+export CONDA_PREFIX='\''/home/sontisid/.conda/envs/westpa-2.0'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''westpa-2.0'\''
+export CONDA_PROMPT_MODIFIER='\''(westpa-2.0) '\''
+export CONDA_EXE='\''/share/software/conda3/4.13.0/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/share/software/conda3/4.13.0/bin/python'\'''
+++ PS1='(westpa-2.0) '
+++ export PATH=/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin
+++ PATH=/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin
+++ export CONDA_PREFIX=/home/sontisid/.conda/envs/westpa-2.0
+++ CONDA_PREFIX=/home/sontisid/.conda/envs/westpa-2.0
+++ export CONDA_SHLVL=1
+++ CONDA_SHLVL=1
+++ export CONDA_DEFAULT_ENV=westpa-2.0
+++ CONDA_DEFAULT_ENV=westpa-2.0
+++ export 'CONDA_PROMPT_MODIFIER=(westpa-2.0) '
+++ CONDA_PROMPT_MODIFIER='(westpa-2.0) '
+++ export CONDA_EXE=/share/software/conda3/4.13.0/bin/conda
+++ CONDA_EXE=/share/software/conda3/4.13.0/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/share/software/conda3/4.13.0/bin/python
+++ CONDA_PYTHON_EXE=/share/software/conda3/4.13.0/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ export LD_LIBRARY_PATH=/software/amber/22/ucdhpc-20.04/lib:/software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64
++ LD_LIBRARY_PATH=/software/amber/22/ucdhpc-20.04/lib:/software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64
++ export WEST_SIM_ROOT=/home/sontisid/ParGaMD_MP/ParGaMD
++ WEST_SIM_ROOT=/home/sontisid/ParGaMD_MP/ParGaMD
++ cd /home/sontisid/ParGaMD_MP/ParGaMD
++ ./init.sh
+env.sh: line 4: /home/sontisid/.bash_profile: No such file or directory
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
++ echo 'init.sh ran'
++ source env.sh
+++ source /home/sontisid/.bash_profile
+env.sh: line 4: /home/sontisid/.bash_profile: No such file or directory
+++ module load cuda/11.8.0
+++ unset _mlshdbg
+++ '[' 0 = 1 ']'
+++ unset _mlre _mlIFS
+++ '[' -n x ']'
+++ _mlIFS=' 	
+'
+++ IFS=' '
+++ '[' -n '' ']'
++++ /usr/bin/tclsh /software/modules/4.6.1/ucdhpc-20.04/libexec/modulecmd.tcl bash load cuda/11.8.0
+++ eval
+++ _mlstatus=0
+++ '[' -n x ']'
+++ IFS=' 	
+'
+++ unset _mlre _mlv _mlrv _mlIFS
+++ '[' -n '' ']'
+++ unset _mlshdbg
+++ return 0
+++ module load amber/22
+++ unset _mlshdbg
+++ '[' 0 = 1 ']'
+++ unset _mlre _mlIFS
+++ '[' -n x ']'
+++ _mlIFS=' 	
+'
+++ IFS=' '
+++ '[' -n '' ']'
++++ /usr/bin/tclsh /software/modules/4.6.1/ucdhpc-20.04/libexec/modulecmd.tcl bash load amber/22
+++ eval
+++ _mlstatus=0
+++ '[' -n x ']'
+++ IFS=' 	
+'
+++ unset _mlre _mlv _mlrv _mlIFS
+++ '[' -n '' ']'
+++ unset _mlshdbg
+++ return 0
+++ module load conda3/4.X
+++ unset _mlshdbg
+++ '[' 0 = 1 ']'
+++ unset _mlre _mlIFS
+++ '[' -n x ']'
+++ _mlIFS=' 	
+'
+++ IFS=' '
+++ '[' -n '' ']'
++++ /usr/bin/tclsh /software/modules/4.6.1/ucdhpc-20.04/libexec/modulecmd.tcl bash load conda3/4.X
+++ eval
+++ _mlstatus=0
+++ '[' -n x ']'
+++ IFS=' 	
+'
+++ unset _mlre _mlv _mlrv _mlIFS
+++ '[' -n '' ']'
+++ unset _mlshdbg
+++ return 0
+++ conda activate westpa-2.0
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate westpa-2.0
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(westpa-2.0) '
++++ __conda_exe shell.posix activate westpa-2.0
++++ /share/software/conda3/4.13.0/bin/conda shell.posix activate westpa-2.0
+++ ask_conda='PS1='\''(westpa-2.0) '\''
+export PATH='\''/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_PROMPT_MODIFIER='\''(westpa-2.0) '\'''
+++ eval 'PS1='\''(westpa-2.0) '\''
+export PATH='\''/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_PROMPT_MODIFIER='\''(westpa-2.0) '\'''
++++ PS1='(westpa-2.0) '
++++ export PATH=/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin
++++ PATH=/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export 'CONDA_PROMPT_MODIFIER=(westpa-2.0) '
++++ CONDA_PROMPT_MODIFIER='(westpa-2.0) '
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
+++ export PATH=/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin:/home/sontisid/bin
+++ PATH=/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin:/home/sontisid/bin
+++ export LD_LIBRARY_PATH=/software/amber/22/ucdhpc-20.04/lib:/software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64
+++ LD_LIBRARY_PATH=/software/amber/22/ucdhpc-20.04/lib:/software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64
+++ [[ -z /home/sontisid/ParGaMD_MP/ParGaMD ]]
++++ basename /home/sontisid/ParGaMD_MP/ParGaMD
+++ export SIM_NAME=ParGaMD
+++ SIM_NAME=ParGaMD
+++ echo 'simulation ParGaMD root is /home/sontisid/ParGaMD_MP/ParGaMD'
+++ source /software/amber/22/ucdhpc-20.04/amber.sh
++++ '[' -n /software/amber/22/ucdhpc-20.04/amber.sh ']'
++++ this_script=/software/amber/22/ucdhpc-20.04/amber.sh
++++++ dirname /software/amber/22/ucdhpc-20.04/amber.sh
+++++ cd /software/amber/22/ucdhpc-20.04
+++++ pwd
++++ export AMBERHOME=/software/amber/22/ucdhpc-20.04
++++ AMBERHOME=/software/amber/22/ucdhpc-20.04
++++ export PATH=/software/amber/22/ucdhpc-20.04/bin:/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin:/home/sontisid/bin
++++ PATH=/software/amber/22/ucdhpc-20.04/bin:/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin:/home/sontisid/bin
++++ '[' 1 = 1 ']'
++++ '[' -z /software/amber/22/ucdhpc-20.04/lib:/software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64 ']'
++++ export LD_LIBRARY_PATH=/software/amber/22/ucdhpc-20.04/lib:/software/amber/22/ucdhpc-20.04/lib:/software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64
++++ LD_LIBRARY_PATH=/software/amber/22/ucdhpc-20.04/lib:/software/amber/22/ucdhpc-20.04/lib:/software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64
++++ '[' 1 = 1 ']'
++++ '[' -z /software/amber/22/ucdhpc-20.04/lib/perl ']'
++++ export PERL5LIB=/software/amber/22/ucdhpc-20.04/lib/perl:/software/amber/22/ucdhpc-20.04/lib/perl
++++ PERL5LIB=/software/amber/22/ucdhpc-20.04/lib/perl:/software/amber/22/ucdhpc-20.04/lib/perl
++++ '[' 1 = 1 ']'
++++ '[' -z /software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages ']'
++++ export PYTHONPATH=/software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages:/software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages
++++ PYTHONPATH=/software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages:/software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages
++++ '[' 1 = 1 ']'
++++ export QUICK_BASIS=/software/amber/22/ucdhpc-20.04/AmberTools/src/quick/basis
++++ QUICK_BASIS=/software/amber/22/ucdhpc-20.04/AmberTools/src/quick/basis
+++ export NODELOC=/home/sontisid/ParGaMD_MP/ParGaMD
+++ NODELOC=/home/sontisid/ParGaMD_MP/ParGaMD
+++ export USE_LOCAL_SCRATCH=1
+++ USE_LOCAL_SCRATCH=1
+++ export WM_ZMQ_MASTER_HEARTBEAT=100
+++ WM_ZMQ_MASTER_HEARTBEAT=100
+++ export WM_ZMQ_WORKER_HEARTBEAT=100
+++ WM_ZMQ_WORKER_HEARTBEAT=100
+++ export WM_ZMQ_TIMEOUT_FACTOR=300
+++ WM_ZMQ_TIMEOUT_FACTOR=300
+++ export BASH=/bin/bash
+++ BASH=/bin/bash
+++ export PERL=/usr/bin/perl
+++ PERL=/usr/bin/perl
+++ export ZSH=/bin/zsh
+++ ZSH=/bin/zsh
+++ export IFCONFIG=/bin/ifconfig
+++ IFCONFIG=/bin/ifconfig
+++ export CUT=/usr/bin/cut
+++ CUT=/usr/bin/cut
+++ export TR=/usr/bin/tr
+++ TR=/usr/bin/tr
+++ export LN=/bin/ln
+++ LN=/bin/ln
+++ export CP=/bin/cp
+++ CP=/bin/cp
+++ export RM=/bin/rm
+++ RM=/bin/rm
+++ export SED=/bin/sed
+++ SED=/bin/sed
+++ export CAT=/bin/cat
+++ CAT=/bin/cat
+++ export HEAD=/bin/head
+++ HEAD=/bin/head
+++ export TAR=/bin/tar
+++ TAR=/bin/tar
+++ export AWK=/usr/bin/awk
+++ AWK=/usr/bin/awk
+++ export PASTE=/usr/bin/paste
+++ PASTE=/usr/bin/paste
+++ export GREP=/bin/grep
+++ GREP=/bin/grep
+++ export SORT=/usr/bin/sort
+++ SORT=/usr/bin/sort
+++ export UNIQ=/usr/bin/uniq
+++ UNIQ=/usr/bin/uniq
+++ export HEAD=/usr/bin/head
+++ HEAD=/usr/bin/head
+++ export MKDIR=/bin/mkdir
+++ MKDIR=/bin/mkdir
+++ export ECHO=/bin/echo
+++ ECHO=/bin/echo
+++ export DATE=/bin/date
+++ DATE=/bin/date
+++ export SANDER=/software/amber/22/ucdhpc-20.04/bin/sander
+++ SANDER=/software/amber/22/ucdhpc-20.04/bin/sander
+++ export PMEMD=/software/amber/22/ucdhpc-20.04/bin/pmemd.cuda
+++ PMEMD=/software/amber/22/ucdhpc-20.04/bin/pmemd.cuda
+++ export CPPTRAJ=/software/amber/22/ucdhpc-20.04/bin/cpptraj
+++ CPPTRAJ=/software/amber/22/ucdhpc-20.04/bin/cpptraj
++ env
++ sort
++ SERVER_INFO=/home/sontisid/ParGaMD_MP/ParGaMD/west_zmq_info.json
++ num_gpu_per_node=1
++ rm -rf nodefilelist.txt
++ scontrol show hostname sapphire-1
++ (( n=0 ))
++ (( n<60 ))
++ w_run --work-manager=zmq --n-workers=0 --zmq-mode=master --zmq-write-host-info=/home/sontisid/ParGaMD_MP/ParGaMD/west_zmq_info.json --zmq-comm-mode=tcp
++ '[' -e /home/sontisid/ParGaMD_MP/ParGaMD/west_zmq_info.json ']'
++ sleep 1
++ (( n++ ))
++ (( n<60 ))
++ '[' -e /home/sontisid/ParGaMD_MP/ParGaMD/west_zmq_info.json ']'
++ sleep 1
++ (( n++ ))
++ (( n<60 ))
++ '[' -e /home/sontisid/ParGaMD_MP/ParGaMD/west_zmq_info.json ']'
++ sleep 1
++ (( n++ ))
++ (( n<60 ))
++ '[' -e /home/sontisid/ParGaMD_MP/ParGaMD/west_zmq_info.json ']'
++ sleep 1
++ (( n++ ))
++ (( n<60 ))
++ '[' -e /home/sontisid/ParGaMD_MP/ParGaMD/west_zmq_info.json ']'
++ echo '== server info file /home/sontisid/ParGaMD_MP/ParGaMD/west_zmq_info.json =='
++ cat /home/sontisid/ParGaMD_MP/ParGaMD/west_zmq_info.json
++ break
++ '[' -e /home/sontisid/ParGaMD_MP/ParGaMD/west_zmq_info.json ']'
++ export CUDA_VISIBLE_DEVICES=0
++ CUDA_VISIBLE_DEVICES=0
++ echo0
+/var/spool/slurmd/job680571/slurm_script: line 67: echo0: command not found
+++ cat nodefilelist.txt
++ for node in $(cat nodefilelist.txt)
++ wait
++ bash /home/sontisid/ParGaMD_MP/ParGaMD/node.sh /home/sontisid/ParGaMD_MP/ParGaMD 680571 sapphire-1 0 --work-manager=zmq --n-workers=1 --zmq-mode=client --zmq-read-host-info=/home/sontisid/ParGaMD_MP/ParGaMD/west_zmq_info.json --zmq-comm-mode=tcp
++ umask g+r
++ cd /home/sontisid/ParGaMD_MP/ParGaMD
++ shift
++ source env.sh
+++ source /home/sontisid/.bash_profile
+env.sh: line 4: /home/sontisid/.bash_profile: No such file or directory
+++ module load cuda/11.8.0
+++ unset _mlshdbg
+++ '[' 0 = 1 ']'
+++ unset _mlre _mlIFS
+++ '[' -n x ']'
+++ _mlIFS=' 	
+'
+++ IFS=' '
+++ '[' -n '' ']'
++++ /usr/bin/tclsh /software/modules/4.6.1/ucdhpc-20.04/libexec/modulecmd.tcl bash load cuda/11.8.0
+++ eval
+++ _mlstatus=0
+++ '[' -n x ']'
+++ IFS=' 	
+'
+++ unset _mlre _mlv _mlrv _mlIFS
+++ '[' -n '' ']'
+++ unset _mlshdbg
+++ return 0
+++ module load amber/22
+++ unset _mlshdbg
+++ '[' 0 = 1 ']'
+++ unset _mlre _mlIFS
+++ '[' -n x ']'
+++ _mlIFS=' 	
+'
+++ IFS=' '
+++ '[' -n '' ']'
++++ /usr/bin/tclsh /software/modules/4.6.1/ucdhpc-20.04/libexec/modulecmd.tcl bash load amber/22
+++ eval
+++ _mlstatus=0
+++ '[' -n x ']'
+++ IFS=' 	
+'
+++ unset _mlre _mlv _mlrv _mlIFS
+++ '[' -n '' ']'
+++ unset _mlshdbg
+++ return 0
+++ module load conda3/4.X
+++ unset _mlshdbg
+++ '[' 0 = 1 ']'
+++ unset _mlre _mlIFS
+++ '[' -n x ']'
+++ _mlIFS=' 	
+'
+++ IFS=' '
+++ '[' -n '' ']'
++++ /usr/bin/tclsh /software/modules/4.6.1/ucdhpc-20.04/libexec/modulecmd.tcl bash load conda3/4.X
+++ eval
+++ _mlstatus=0
+++ '[' -n x ']'
+++ IFS=' 	
+'
+++ unset _mlre _mlv _mlrv _mlIFS
+++ '[' -n '' ']'
+++ unset _mlshdbg
+++ return 0
+++ conda activate westpa-2.0
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+++ export PATH=/software/modules/4.6.1/ucdhpc-20.04//bin:/software/amber/22/ucdhpc-20.04/bin:/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin:/home/sontisid/bin:/home/sontisid/bin
+++ PATH=/software/modules/4.6.1/ucdhpc-20.04//bin:/software/amber/22/ucdhpc-20.04/bin:/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin:/home/sontisid/bin:/home/sontisid/bin
+++ export LD_LIBRARY_PATH=/software/amber/22/ucdhpc-20.04/lib:/software/amber/22/ucdhpc-20.04/lib:/software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64
+++ LD_LIBRARY_PATH=/software/amber/22/ucdhpc-20.04/lib:/software/amber/22/ucdhpc-20.04/lib:/software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64
+++ [[ -z /home/sontisid/ParGaMD_MP/ParGaMD ]]
++++ basename /home/sontisid/ParGaMD_MP/ParGaMD
+++ export SIM_NAME=ParGaMD
+++ SIM_NAME=ParGaMD
+++ echo 'simulation ParGaMD root is /home/sontisid/ParGaMD_MP/ParGaMD'
+++ source /software/amber/22/ucdhpc-20.04/amber.sh
++++ '[' -n /software/amber/22/ucdhpc-20.04/amber.sh ']'
++++ this_script=/software/amber/22/ucdhpc-20.04/amber.sh
++++++ dirname /software/amber/22/ucdhpc-20.04/amber.sh
+++++ cd /software/amber/22/ucdhpc-20.04
+++++ pwd
++++ export AMBERHOME=/software/amber/22/ucdhpc-20.04
++++ AMBERHOME=/software/amber/22/ucdhpc-20.04
++++ export PATH=/software/amber/22/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04//bin:/software/amber/22/ucdhpc-20.04/bin:/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin:/home/sontisid/bin:/home/sontisid/bin
++++ PATH=/software/amber/22/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04//bin:/software/amber/22/ucdhpc-20.04/bin:/home/sontisid/.conda/envs/westpa-2.0/bin:/software/conda3/4.X/condabin:/software/conda3/4.X/bin:/software/amber/22/ucdhpc-20.04/bin:/software/openmpi/4.1.5/ucdhpc-20.04/bin:/software/hwloc/2.9.3/ucdhpc-20.04/bin:/software/slurm/23.02.7/ucdhpc-20.04/sbin:/software/slurm/23.02.7/ucdhpc-20.04/bin:/software/cuda/11.8.0/ucdhpc-20.04/bin:/software/modules/4.6.1/ucdhpc-20.04/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin:/home/sontisid/bin:/home/sontisid/bin
++++ '[' 1 = 1 ']'
++++ '[' -z /software/amber/22/ucdhpc-20.04/lib:/software/amber/22/ucdhpc-20.04/lib:/software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64 ']'
++++ export LD_LIBRARY_PATH=/software/amber/22/ucdhpc-20.04/lib:/software/amber/22/ucdhpc-20.04/lib:/software/amber/22/ucdhpc-20.04/lib:/software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64
++++ LD_LIBRARY_PATH=/software/amber/22/ucdhpc-20.04/lib:/software/amber/22/ucdhpc-20.04/lib:/software/amber/22/ucdhpc-20.04/lib:/software/openmpi/4.1.5/ucdhpc-20.04/lib:/software/pmix/4.2.6/ucdhpc-20.04/lib:/software/ucx/1.14.1/ucdhpc-20.04/lib:/software/libevent/2.1.12-stable/ucdhpc-20.04/lib:/software/hwloc/2.9.3/ucdhpc-20.04/lib:/software/cuda/11.8.0/ucdhpc-20.04/lib64/stubs:/software/cuda/11.8.0/ucdhpc-20.04/lib64
++++ '[' 1 = 1 ']'
++++ '[' -z /software/amber/22/ucdhpc-20.04/lib/perl:/software/amber/22/ucdhpc-20.04/lib/perl ']'
++++ export PERL5LIB=/software/amber/22/ucdhpc-20.04/lib/perl:/software/amber/22/ucdhpc-20.04/lib/perl:/software/amber/22/ucdhpc-20.04/lib/perl
++++ PERL5LIB=/software/amber/22/ucdhpc-20.04/lib/perl:/software/amber/22/ucdhpc-20.04/lib/perl:/software/amber/22/ucdhpc-20.04/lib/perl
++++ '[' 1 = 1 ']'
++++ '[' -z /software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages:/software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages ']'
++++ export PYTHONPATH=/software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages:/software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages:/software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages
++++ PYTHONPATH=/software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages:/software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages:/software/amber/22/ucdhpc-20.04/lib/python3.11/site-packages
++++ '[' 1 = 1 ']'
++++ export QUICK_BASIS=/software/amber/22/ucdhpc-20.04/AmberTools/src/quick/basis
++++ QUICK_BASIS=/software/amber/22/ucdhpc-20.04/AmberTools/src/quick/basis
+++ export NODELOC=/home/sontisid/ParGaMD_MP/ParGaMD
+++ NODELOC=/home/sontisid/ParGaMD_MP/ParGaMD
+++ export USE_LOCAL_SCRATCH=1
+++ USE_LOCAL_SCRATCH=1
+++ export WM_ZMQ_MASTER_HEARTBEAT=100
+++ WM_ZMQ_MASTER_HEARTBEAT=100
+++ export WM_ZMQ_WORKER_HEARTBEAT=100
+++ WM_ZMQ_WORKER_HEARTBEAT=100
+++ export WM_ZMQ_TIMEOUT_FACTOR=300
+++ WM_ZMQ_TIMEOUT_FACTOR=300
+++ export BASH=/bin/bash
+++ BASH=/bin/bash
+++ export PERL=/usr/bin/perl
+++ PERL=/usr/bin/perl
+++ export ZSH=/bin/zsh
+++ ZSH=/bin/zsh
+++ export IFCONFIG=/bin/ifconfig
+++ IFCONFIG=/bin/ifconfig
+++ export CUT=/usr/bin/cut
+++ CUT=/usr/bin/cut
+++ export TR=/usr/bin/tr
+++ TR=/usr/bin/tr
+++ export LN=/bin/ln
+++ LN=/bin/ln
+++ export CP=/bin/cp
+++ CP=/bin/cp
+++ export RM=/bin/rm
+++ RM=/bin/rm
+++ export SED=/bin/sed
+++ SED=/bin/sed
+++ export CAT=/bin/cat
+++ CAT=/bin/cat
+++ export HEAD=/bin/head
+++ HEAD=/bin/head
+++ export TAR=/bin/tar
+++ TAR=/bin/tar
+++ export AWK=/usr/bin/awk
+++ AWK=/usr/bin/awk
+++ export PASTE=/usr/bin/paste
+++ PASTE=/usr/bin/paste
+++ export GREP=/bin/grep
+++ GREP=/bin/grep
+++ export SORT=/usr/bin/sort
+++ SORT=/usr/bin/sort
+++ export UNIQ=/usr/bin/uniq
+++ UNIQ=/usr/bin/uniq
+++ export HEAD=/usr/bin/head
+++ HEAD=/usr/bin/head
+++ export MKDIR=/bin/mkdir
+++ MKDIR=/bin/mkdir
+++ export ECHO=/bin/echo
+++ ECHO=/bin/echo
+++ export DATE=/bin/date
+++ DATE=/bin/date
+++ export SANDER=/software/amber/22/ucdhpc-20.04/bin/sander
+++ SANDER=/software/amber/22/ucdhpc-20.04/bin/sander
+++ export PMEMD=/software/amber/22/ucdhpc-20.04/bin/pmemd.cuda
+++ PMEMD=/software/amber/22/ucdhpc-20.04/bin/pmemd.cuda
+++ export CPPTRAJ=/software/amber/22/ucdhpc-20.04/bin/cpptraj
+++ CPPTRAJ=/software/amber/22/ucdhpc-20.04/bin/cpptraj
++ export WEST_JOBID=680571
++ WEST_JOBID=680571
++ shift
++ export SLURM_NODENAME=sapphire-1
++ SLURM_NODENAME=sapphire-1
++ shift
++ export CUDA_VISIBLE_DEVICES=0
++ CUDA_VISIBLE_DEVICES=0
++ shift
++ echo 'starting WEST client processes on: '
++ hostname
++ echo 'current directory is /home/sontisid/ParGaMD_MP/ParGaMD'
++ echo 'environment is: '
++ sort
++ env
++ echo 'CUDA_VISIBLE_DEVICES = ' 0
++ w_run --work-manager=zmq --n-workers=1 --zmq-mode=client --zmq-read-host-info=/home/sontisid/ParGaMD_MP/ParGaMD/west_zmq_info.json --zmq-comm-mode=tcp
