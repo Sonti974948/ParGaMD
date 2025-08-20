@@ -1,0 +1,13 @@
+# Configuration file for CE 2D reweighting
+method: ce
+input: data_2d.dat
+dimensions: 2d
+temperature: 300.0
+bin_width: 0.2
+x_range: [0.0, 10.0]  # Optional: auto-detect if not specified
+y_range: [-2.0, 2.0]  # Optional: auto-detect if not specified
+cutoff: 10.0
+energy_cutoff: 8.0
+output_dir: ./results_ce_2d
+plot: true
+

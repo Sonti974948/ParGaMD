@@ -1,0 +1,12 @@
+# Configuration file for CE 1D reweighting
+method: ce
+input: data_1d.dat
+dimensions: 1d
+temperature: 300.0
+bin_width: 0.2
+x_range: [0.0, 10.0]  # Optional: auto-detect if not specified
+cutoff: 10.0
+energy_cutoff: 8.0
+output_dir: ./results_ce_1d
+plot: true
+
