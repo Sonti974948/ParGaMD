@@ -6,7 +6,7 @@
 
 A comprehensive tool for reweighting Gaussian Accelerated MD (GaMD) data using both Cumulative Expansion (CE) and Maclaurin Series (MC) methods with Weighted Ensemble (WE) support. 
 
-Created by [Siddharth Sonti](https://github.com/Sonti974948) and [Anugraha Thyagatur](https://github.com/anugrahat)
+Created by [Siddharth Sonti](https://github.com/Sonti974948) and [Anugraha Thyagatur](https://github.com/anugrahat) @ UC Davis
 
 ## 🚀 Quick Start
 
