@@ -4,7 +4,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tests](https://github.com/yourusername/pargamd-reweighting/actions/workflows/test.yml/badge.svg)](https://github.com/yourusername/pargamd-reweighting/actions/workflows/test.yml)
 
-A comprehensive tool for reweighting Gaussian Accelerated MD (GaMD) data using both Cumulative Expansion (CE) and Maclaurin Series (MC) methods with Weighted Ensemble (WE) support.
+A comprehensive tool for reweighting Gaussian Accelerated MD (GaMD) data using both Cumulative Expansion (CE) and Maclaurin Series (MC) methods with Weighted Ensemble (WE) support. 
+
+Created by [Siddharth Sonti](https://github.com/Sonti974948) and [Anugraha Thyagatur](https://github.com/anugrahat)
 
 ## 🚀 Quick Start
 
@@ -278,11 +280,10 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 If you use this tool in your research, please cite:
 
 ```bibtex
-@software{pargamd_reweighting,
-  title={ParGaMD Reweighting Tool},
-  author={Kidigannappa, Anugraha Thyagatur and Contributors},
-  year={2024},
-  url={https://github.com/yourusername/pargamd-reweighting}
+@article{sonti2025accelerating,
+  title={Accelerating free energy exploration using parallelizable Gaussian accelerated molecular dynamics (ParGaMD)},
+  author={Sonti, Siddharth and Thyagatur, Anugraha and Wan, Hung-Yu and Hamelynck, Maxen and Faller, Roland and Ahn, Surl-Hee},
+  year={2025}
 }
 ```
 
