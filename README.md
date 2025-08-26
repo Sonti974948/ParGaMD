@@ -2,7 +2,7 @@
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://github.com/yourusername/pargamd-reweighting/actions/workflows/test.yml/badge.svg)](https://github.com/yourusername/pargamd-reweighting/actions/workflows/test.yml)
+
 
 A comprehensive tool for reweighting Gaussian Accelerated MD (GaMD) data using both Cumulative Expansion (CE) and Maclaurin Series (MC) methods with Weighted Ensemble (WE) support. 
 
