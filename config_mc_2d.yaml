@@ -1,0 +1,14 @@
+# Configuration file for MC 2D reweighting
+method: mc
+dimensions: 2d
+input: example_data_2d.dat
+order: 10
+temperature: 300.0
+bin_width_x: 0.5
+bin_width_y: 0.5
+x_range: [0.0, 10.0]  # Optional: auto-detect if not specified
+y_range: [0.0, 12.0]  # Optional: auto-detect if not specified
+energy_cutoff: 8.0
+output_dir: ./results_mc_2d
+plot: true
+

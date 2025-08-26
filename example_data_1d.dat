@@ -1,0 +1,17 @@
+# Example 1D data file for CE reweighting
+# Format: [RC, dV, w_WE]
+# RC: Reaction coordinate
+# dV: GaMD boost potential (kcal/mol)
+# w_WE: Weighted Ensemble weight
+
+1.234  0.567  1.000
+2.345  0.789  0.950
+3.456  0.123  1.050
+4.567  0.456  0.980
+5.678  0.234  1.020
+6.789  0.678  0.990
+7.890  0.345  1.010
+8.901  0.567  0.970
+9.012  0.789  1.030
+10.123 0.123  0.960
+
