@@ -15,7 +15,7 @@ A comprehensive tool for reweighting Gaussian Accelerated MD (GaMD) data using b
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/pargamd-reweighting.git
+git clone -b ParGaMD_reweighting https://github.com/Sonti974948/ParGaMD.git 
 cd pargamd-reweighting
 
 # Install dependencies
