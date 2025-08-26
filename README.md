@@ -7,7 +7,7 @@
 A comprehensive tool for reweighting Gaussian Accelerated MD (GaMD) data using both Cumulative Expansion (CE) and Maclaurin Series (MC) methods with Weighted Ensemble (WE) support. 
 
 Created by [Siddharth Sonti](https://github.com/Sonti974948) and [Anugraha Thyagatur](https://github.com/anugrahat) @ UC Davis
-=======
+
 A comprehensive tool for reweighting Gaussian Accelerated MD (GaMD) data using both Cumulative Expansion (CE) and Maclaurin Series (MC) methods with Weighted Ensemble (WE) support.
 
 
@@ -48,11 +48,11 @@ python pargamd_reweighting.py ce --input example_data_1d.dat --dimensions 1d --t
 
 - **🔬 Two Reweighting Methods**: 
   - Cumulative Expansion (CE) for 1D and 2D data
-<<<<<<< HEAD
+
   - Maclaurin Series (MC) for 2D data
 =======
   - Maclaurin Series (MC) for 1D and 2D data
->>>>>>> master
+
 - **📁 Streamlined Input Handling**: Automatic format detection and validation
 - **🐛 Detailed Error Reporting**: Pinpoint errors to specific lines with explanations
 - **📊 Progress Tracking**: Visual progress bars for long computations
@@ -320,7 +320,7 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 If you use this tool in your research, please cite:
 
 ```bibtex
-<<<<<<< HEAD
+
 @article{sonti2025accelerating,
   title={Accelerating free energy exploration using parallelizable Gaussian accelerated molecular dynamics (ParGaMD)},
   author={Sonti, Siddharth and Thyagatur, Anugraha and Wan, Hung-Yu and Hamelynck, Maxen and Faller, Roland and Ahn, Surl-Hee},
@@ -331,7 +331,7 @@ If you use this tool in your research, please cite:
   author={Kidigannappa, Anugraha Thyagatur and Contributors},
   year={2024},
   url={https://github.com/yourusername/pargamd-reweighting}
->>>>>>> master
+
 }
 ```
 
