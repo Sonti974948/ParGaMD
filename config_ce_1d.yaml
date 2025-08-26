@@ -1,6 +1,10 @@
 # Configuration file for CE 1D reweighting
 method: ce
+<<<<<<< HEAD
 input: data_1d.dat
+=======
+input: example_data_1d.dat
+>>>>>>> master
 dimensions: 1d
 temperature: 300.0
 bin_width: 0.2

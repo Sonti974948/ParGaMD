@@ -1,0 +1,11 @@
+# Configuration for 1D Maclaurin Series (MC) reweighting
+method: mc
+dimensions: 1d
+input: example_data_1d.dat
+order: 10
+temperature: 300.0
+bin_width: 0.2
+x_range: [0.0, 10.0]
+energy_cutoff: 8.0
+output_dir: ./run_1/mc_1d
+plot: true

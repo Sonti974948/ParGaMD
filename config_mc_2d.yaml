@@ -1,6 +1,11 @@
 # Configuration file for MC 2D reweighting
 method: mc
+<<<<<<< HEAD
 input: data_2d.dat
+=======
+dimensions: 2d
+input: example_data_2d.dat
+>>>>>>> master
 order: 10
 temperature: 300.0
 bin_width_x: 0.5

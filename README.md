@@ -4,9 +4,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tests](https://github.com/yourusername/pargamd-reweighting/actions/workflows/test.yml/badge.svg)](https://github.com/yourusername/pargamd-reweighting/actions/workflows/test.yml)
 
+<<<<<<< HEAD
 A comprehensive tool for reweighting Gaussian Accelerated MD (GaMD) data using both Cumulative Expansion (CE) and Maclaurin Series (MC) methods with Weighted Ensemble (WE) support. 
 
 Created by [Siddharth Sonti](https://github.com/Sonti974948) and [Anugraha Thyagatur](https://github.com/anugrahat) @ UC Davis
+=======
+A comprehensive tool for reweighting Gaussian Accelerated MD (GaMD) data using both Cumulative Expansion (CE) and Maclaurin Series (MC) methods with Weighted Ensemble (WE) support.
+>>>>>>> master
 
 ## 🚀 Quick Start
 
@@ -45,7 +49,11 @@ python pargamd_reweighting.py ce --input example_data_1d.dat --dimensions 1d --t
 
 - **🔬 Two Reweighting Methods**: 
   - Cumulative Expansion (CE) for 1D and 2D data
+<<<<<<< HEAD
   - Maclaurin Series (MC) for 2D data
+=======
+  - Maclaurin Series (MC) for 1D and 2D data
+>>>>>>> master
 - **📁 Streamlined Input Handling**: Automatic format detection and validation
 - **🐛 Detailed Error Reporting**: Pinpoint errors to specific lines with explanations
 - **📊 Progress Tracking**: Visual progress bars for long computations
@@ -104,9 +112,20 @@ python pargamd_reweighting.py ce --input data_1d.dat --dimensions 1d --temperatu
 python pargamd_reweighting.py ce --input data_2d.dat --dimensions 2d --temperature 300
 ```
 
+<<<<<<< HEAD
 #### MC Method (2D only)
 ```bash
 python pargamd_reweighting.py mc --input data_2d.dat --order 10 --temperature 300
+=======
+#### MC Method (1D)
+```bash
+python pargamd_reweighting.py mc --input data_1d.dat --dimensions 1d --order 10 --temperature 300
+```
+
+#### MC Method (2D)
+```bash
+python pargamd_reweighting.py mc --input data_2d.dat --dimensions 2d --order 10 --temperature 300
+>>>>>>> master
 ```
 
 ### Advanced Usage
@@ -119,6 +138,12 @@ python pargamd_reweighting.py ce --config config_ce_1d.yaml
 # CE 2D with config file
 python pargamd_reweighting.py ce --config config_ce_2d.yaml
 
+<<<<<<< HEAD
+=======
+# MC 1D with config file
+python pargamd_reweighting.py mc --config config_mc_1d.yaml
+
+>>>>>>> master
 # MC 2D with config file
 python pargamd_reweighting.py mc --config config_mc_2d.yaml
 ```
@@ -157,12 +182,23 @@ python pargamd_reweighting.py ce \
 
 ### MC Method Options
 - `--input`: Input data file (required)
+<<<<<<< HEAD
 - `--order`: Order of Maclaurin expansion (default: 10)
 - `--temperature`: Temperature in K (default: 300.0)
 - `--bin-width-x`: Bin width in X dimension (default: 0.5)
 - `--bin-width-y`: Bin width in Y dimension (default: 0.5)
 - `--x-range`: X range as min max (optional)
 - `--y-range`: Y range as min max (optional)
+=======
+- `--dimensions`: Data dimensionality (`1d` or `2d`, required)
+- `--order`: Order of Maclaurin expansion (default: 10)
+- `--temperature`: Temperature in K (default: 300.0)
+- `--bin-width`: Bin width for 1D (default: 0.2)
+- `--bin-width-x`: Bin width in X dimension for 2D (default: 0.5)
+- `--bin-width-y`: Bin width in Y dimension for 2D (default: 0.5)
+- `--x-range`: X range as min max (optional)
+- `--y-range`: Y range as min max (2D only, optional)
+>>>>>>> master
 - `--energy-cutoff`: Maximum energy cutoff in kcal/mol (default: 8.0)
 
 ### Common Options
@@ -179,7 +215,12 @@ python pargamd_reweighting.py ce \
 - `pmf_c3.xvg` / `pmf_c3_2D.xvg`: Third cumulant PMF
 
 ### MC Method Outputs
+<<<<<<< HEAD
 - `pmf-{input_file}.xvg`: Maclaurin series PMF
+=======
+- `pmf_mc_1d.xvg`: 1D Maclaurin series PMF
+- `pmf_mc_2d.xvg`: 2D Maclaurin series PMF
+>>>>>>> master
 
 ### Additional Outputs (when using --plot)
 - `pmf_1d_{method}.png` / `pmf_2d_{method}.png`: PMF plots
@@ -280,10 +321,18 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 If you use this tool in your research, please cite:
 
 ```bibtex
+<<<<<<< HEAD
 @article{sonti2025accelerating,
   title={Accelerating free energy exploration using parallelizable Gaussian accelerated molecular dynamics (ParGaMD)},
   author={Sonti, Siddharth and Thyagatur, Anugraha and Wan, Hung-Yu and Hamelynck, Maxen and Faller, Roland and Ahn, Surl-Hee},
   year={2025}
+=======
+@software{pargamd_reweighting,
+  title={ParGaMD Reweighting Tool},
+  author={Kidigannappa, Anugraha Thyagatur and Contributors},
+  year={2024},
+  url={https://github.com/yourusername/pargamd-reweighting}
+>>>>>>> master
 }
 ```
 

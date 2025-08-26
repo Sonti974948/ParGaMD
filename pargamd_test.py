@@ -35,10 +35,7 @@ import yaml
 import argparse
 from pathlib import Path
 from tqdm import tqdm
-<<<<<<< HEAD
-=======
 import math
->>>>>>> master
 
 import warnings
 from typing import Tuple, Optional, Dict, Any, Union
@@ -226,33 +223,6 @@ def compute_cumulants(sum_w: np.ndarray, sum_w_dV: np.ndarray,
     beta = 1.0/(k_B * T)
     shape = sum_w.shape
     
-<<<<<<< HEAD
-    c1 = np.zeros(shape)
-    c2 = np.zeros(shape)
-    c3 = np.zeros(shape)
-    
-    # Find bins with sufficient weight
-    valid_bins = sum_w >= cutoff
-    
-    if np.any(valid_bins):
-        mean_dV = np.where(valid_bins, sum_w_dV / sum_w, 0.0)
-        mean_dV2 = np.where(valid_bins, sum_w_dV2 / sum_w, 0.0)
-        mean_dV3 = np.where(valid_bins, sum_w_dV3 / sum_w, 0.0)
-        
-        var_dV = mean_dV2 - mean_dV**2
-        
-        # 1st cumulant: c1 = beta * <dV>
-        c1 = np.where(valid_bins, beta * mean_dV, 0.0)
-        
-        # 2nd cumulant: c2 = 1/2 * beta^2 * variance
-        c2 = np.where(valid_bins, 0.5 * (beta**2) * var_dV, 0.0)
-        
-        # 3rd cumulant: c3 = (1/6)*beta^3*(<dV^3>-3<dV^2><dV>+2<dV>^3)
-        c3 = np.where(valid_bins, 
-                     (1.0/6.0) * (beta**3) * (mean_dV3 - 3.0*mean_dV2*mean_dV + 2.0*(mean_dV**3)), 
-                     0.0)
-    
-=======
     c1 = np.zeros(shape, dtype=float)
     c2 = np.zeros(shape, dtype=float)
     c3 = np.zeros(shape, dtype=float)
@@ -283,7 +253,6 @@ def compute_cumulants(sum_w: np.ndarray, sum_w_dV: np.ndarray,
             mean_dV3[valid_bins] - 3.0*mean_dV2[valid_bins]*mean_dV[valid_bins] + 2.0*(mean_dV[valid_bins]**3)
         )
 
->>>>>>> master
     return c1, c2, c3
 
 def reweight_ce_1d(rc: np.ndarray, dV: np.ndarray, w_WE: np.ndarray, 
@@ -297,10 +266,12 @@ def reweight_ce_1d(rc: np.ndarray, dV: np.ndarray, w_WE: np.ndarray,
     beta = 1.0/(k_B * T)
     nbins = len(binsX) - 1
     
-    sum_w = np.zeros(nbins)
-    sum_w_dV = np.zeros(nbins)
-    sum_w_dV2 = np.zeros(nbins)
-    sum_w_dV3 = np.zeros(nbins)
+    # PyReweighting-style binning: use unweighted counts for cutoff and PMF,
+    # but compute cumulants on the per-bin "boost" variable b = log(w)/beta + dV.
+    sum_w = np.zeros(nbins)      # here acts as count per bin
+    sum_w_dV = np.zeros(nbins)   # sum of boost per bin
+    sum_w_dV2 = np.zeros(nbins)  # sum of boost^2 per bin
+    sum_w_dV3 = np.zeros(nbins)  # sum of boost^3 per bin
     
     # Bin assignment & accumulation with progress bar
     for i in tqdm(range(len(rc)), desc="Processing 1D CE bins"):
@@ -309,16 +280,18 @@ def reweight_ce_1d(rc: np.ndarray, dV: np.ndarray, w_WE: np.ndarray,
             continue
         w = w_WE[i]
         dv_i = dV[i]
+        # Unweighted count for cutoff and hist; boost retains log(w)/beta + dV
         sum_w[bx] += w
-        sum_w_dV[bx] += np.log(w)/beta + dv_i
-        sum_w_dV2[bx] += np.power(np.log(w)/beta + dv_i, 2)
-        sum_w_dV3[bx] += np.power(np.log(w)/beta + dv_i, 3)
+        boost = (np.log(w)/beta) + dv_i
+        sum_w_dV[bx]  += boost
+        sum_w_dV2[bx] += boost*boost
+        sum_w_dV3[bx] += boost*boost*boost
     
     # Compute cumulants
     c1, c2, c3 = compute_cumulants(sum_w, sum_w_dV, sum_w_dV2, sum_w_dV3, cutoff, T)
     
-    # Raw histogram
-    hist, newedges = np.histogram(rc, bins=binsX, weights=w_WE)
+    # Raw histogram (unweighted counts, PyReweighting style)
+    hist, newedges = np.histogram(rc, bins=binsX, weights=None)
     
     return hist, newedges, c1, c2, c3
 
@@ -335,10 +308,11 @@ def reweight_ce_2d(cv1: np.ndarray, cv2: np.ndarray, dV: np.ndarray, w_WE: np.nd
     nx = len(binsX) - 1
     ny = len(binsY) - 1
     
-    sum_w = np.zeros((nx, ny))
-    sum_w_dV = np.zeros((nx, ny))
-    sum_w_dV2 = np.zeros((nx, ny))
-    sum_w_dV3 = np.zeros((nx, ny))
+    # PyReweighting-style: counts per bin for cutoff/PMF; cumulants on boost values
+    sum_w = np.zeros((nx, ny))     # counts
+    sum_w_dV = np.zeros((nx, ny))  # sum boost
+    sum_w_dV2 = np.zeros((nx, ny)) # sum boost^2
+    sum_w_dV3 = np.zeros((nx, ny)) # sum boost^3
     
     # Bin assignment with progress bar
     for i in tqdm(range(len(cv1)), desc="Processing 2D CE bins"):
@@ -349,21 +323,16 @@ def reweight_ce_2d(cv1: np.ndarray, cv2: np.ndarray, dV: np.ndarray, w_WE: np.nd
         w = w_WE[i]
         dv_i = dV[i]
         sum_w[bx, by] += w
-<<<<<<< HEAD
-        sum_w_dV[bx] += np.log(w)/beta + dv_i
-        sum_w_dV2[bx] += np.power(np.log(w)/beta + dv_i, 2)
-        sum_w_dV3[bx] += np.power(np.log(w)/beta + dv_i, 3)
-=======
-        sum_w_dV[bx, by] += np.log(w)/beta + dv_i
-        sum_w_dV2[bx, by] += np.power(np.log(w)/beta + dv_i, 2)
-        sum_w_dV3[bx, by] += np.power(np.log(w)/beta + dv_i, 3)
->>>>>>> master
+        boost = (np.log(w)/beta) + dv_i
+        sum_w_dV[bx, by]  += boost
+        sum_w_dV2[bx, by] += boost*boost
+        sum_w_dV3[bx, by] += boost*boost*boost
     
     # Compute cumulants
     c1_2D, c2_2D, c3_2D = compute_cumulants(sum_w, sum_w_dV, sum_w_dV2, sum_w_dV3, cutoff, T)
     
-    # 2D raw histogram
-    hist2D, edgesX, edgesY = np.histogram2d(cv1, cv2, bins=[binsX, binsY], weights=w_WE)
+    # 2D raw histogram (unweighted counts)
+    hist2D, edgesX, edgesY = np.histogram2d(cv1, cv2, bins=[binsX, binsY], weights=None)
     
     return hist2D, edgesX, edgesY, c1_2D, c2_2D, c3_2D
 
@@ -384,49 +353,11 @@ def compute_maclaurin_expansion(dV: np.ndarray, order: int, T: float) -> np.ndar
     beta_dV = beta * dV
     
     for k in tqdm(range(order+1), desc="Computing Maclaurin expansion"):
-<<<<<<< HEAD
-        term = np.power(beta_dV, k) / np.math.factorial(k)
-=======
         term = np.power(beta_dV, k) / math.factorial(k)
->>>>>>> master
         mc_weight += term
     
     return mc_weight
 
-<<<<<<< HEAD
-=======
-def reweight_mc_1d(rc: np.ndarray, dV: np.ndarray, w_WE: np.ndarray,
-                   binsX: np.ndarray, order: int, T: float) -> Tuple[np.ndarray, np.ndarray]:
-    """
-    Compute MC reweighting for 1D data.
-    
-    Args:
-        rc: Reaction coordinate values
-        dV: GaMD boost potential
-        w_WE: WE segment weights
-        binsX: X bin edges
-        order: Order of Maclaurin expansion
-        T: Temperature
-    
-    Returns:
-        Tuple of (hist, bin_edges)
-    """
-    # Compute Maclaurin expansion
-    mc_weight = compute_maclaurin_expansion(dV, order, T)
-    
-    # Combine with WE weights
-    combined_weight = w_WE * mc_weight
-    
-    # Build 1D histogram
-    hist, bin_edges = np.histogram(
-        rc,
-        bins=binsX,
-        weights=combined_weight
-    )
-    
-    return hist, bin_edges
-
->>>>>>> master
 def reweight_mc_2d(cv1: np.ndarray, cv2: np.ndarray, dV: np.ndarray, w_WE: np.ndarray,
                    binsX: np.ndarray, binsY: np.ndarray, order: int, T: float) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
     """
@@ -608,20 +539,10 @@ Examples:
   # CE method (2D)
   python pargamd_reweighting.py ce --input data_2d.dat --dimensions 2d --temperature 300
   
-<<<<<<< HEAD
   # MC method (2D only)
   python pargamd_reweighting.py mc --input data_2d.dat --order 10 --temperature 300
   
   # Using configuration file
-=======
-  # MC method (1D)
-  python pargamd_reweighting.py mc --input data_1d.dat --dimensions 1d --order 10 --temperature 300
-  
-  # MC method (2D)
-  python pargamd_reweighting.py mc --input data_2d.dat --dimensions 2d --order 10 --temperature 300
-  
-  # Using configuration file (all parameters defined in YAML)
->>>>>>> master
   python pargamd_reweighting.py ce --config config.yaml
   
   # With plotting
@@ -634,15 +555,9 @@ Examples:
     
     # CE method parser
     ce_parser = subparsers.add_parser('ce', help='Cumulative Expansion method')
-<<<<<<< HEAD
     ce_parser.add_argument('--input', help='Input data file')
     ce_parser.add_argument('--dimensions', choices=['1d', '2d'], required=True,
                           help='Dimensionality of the data')
-=======
-    ce_parser.add_argument('--input', help='Input data file (can be specified in config file)')
-    ce_parser.add_argument('--dimensions', choices=['1d', '2d'],
-                          help='Dimensionality of the data (required if not using config file)')
->>>>>>> master
     ce_parser.add_argument('--temperature', type=float, default=300.0,
                           help='Temperature in K (default: 300)')
     ce_parser.add_argument('--bin-width', type=float, default=0.2,
@@ -658,18 +573,11 @@ Examples:
     
     # MC method parser
     mc_parser = subparsers.add_parser('mc', help='Maclaurin Series method')
-<<<<<<< HEAD
     mc_parser.add_argument('--input', help='Input data file')
-=======
-    mc_parser.add_argument('--input', help='Input data file (can be specified in config file)')
-    mc_parser.add_argument('--dimensions', choices=['1d', '2d'],
-                          help='Dimensionality of the data (required if not using config file)')
->>>>>>> master
     mc_parser.add_argument('--order', type=int, default=10,
                           help='Order of Maclaurin expansion (default: 10)')
     mc_parser.add_argument('--temperature', type=float, default=300.0,
                           help='Temperature in K (default: 300)')
-<<<<<<< HEAD
     mc_parser.add_argument('--bin-width-x', type=float, default=0.5,
                           help='Bin width in X dimension (default: 0.5)')
     mc_parser.add_argument('--bin-width-y', type=float, default=0.5,
@@ -678,18 +586,6 @@ Examples:
                           help='X range: min max')
     mc_parser.add_argument('--y-range', nargs=2, type=float, default=None,
                           help='Y range: min max')
-=======
-    mc_parser.add_argument('--bin-width', type=float, default=0.2,
-                          help='Bin width for 1D (default: 0.2)')
-    mc_parser.add_argument('--bin-width-x', type=float, default=0.5,
-                          help='Bin width in X dimension for 2D (default: 0.5)')
-    mc_parser.add_argument('--bin-width-y', type=float, default=0.5,
-                          help='Bin width in Y dimension for 2D (default: 0.5)')
-    mc_parser.add_argument('--x-range', nargs=2, type=float, default=None,
-                          help='X range: min max')
-    mc_parser.add_argument('--y-range', nargs=2, type=float, default=None,
-                          help='Y range: min max (2D only)')
->>>>>>> master
     mc_parser.add_argument('--energy-cutoff', type=float, default=8.0,
                           help='Maximum energy cutoff (default: 8.0 kcal/mol)')
     
@@ -712,20 +608,9 @@ Examples:
         # Load config if provided
         if args.config:
             config = load_config(args.config)
-<<<<<<< HEAD
             # Override config with command line arguments
             for key, value in vars(args).items():
                 if value is not None and key != 'config':
-=======
-            # Override config with command line arguments (but not defaults)
-            for key, value in vars(args).items():
-                if value is not None and key != 'config':
-                    # Don't override config values with argument defaults
-                    if key == 'output_dir' and value == './':
-                        continue
-                    if key == 'plot' and value == False:
-                        continue
->>>>>>> master
                     config[key] = value
             args = argparse.Namespace(**config)
         
@@ -737,13 +622,6 @@ Examples:
         if not args.input:
             raise InputValidationError("Input file must be specified (--input)")
         
-<<<<<<< HEAD
-=======
-        # Validate dimensions
-        if not hasattr(args, 'dimensions') or args.dimensions is None:
-            raise InputValidationError("Dimensions must be specified (--dimensions or in config file)")
-        
->>>>>>> master
         logger.info(f"Starting {args.method.upper()} reweighting...")
         
         if args.method == 'ce':
@@ -804,7 +682,6 @@ Examples:
                 pmf_data = {'c1': pmf_c1_2D, 'c2': pmf_c2_2D, 'c3': pmf_c3_2D}
         
         elif args.method == 'mc':
-<<<<<<< HEAD
             # Load 2D data
             cv1, cv2, dV, w_WE = load_data_2d(args.input)
             
@@ -825,59 +702,11 @@ Examples:
             write_pmf_2d(f"{output_dir}/pmf-{args.input}.xvg", pmf_mc, edgesX, edgesY)
             
             pmf_data = {'mc': pmf_mc}
-=======
-            if args.dimensions == '1d':
-                # Load 1D data
-                rc, dV, w_WE = load_data_1d(args.input)
-                
-                # Define bins
-                binsX = define_bins(rc, args.bin_width, args.x_range)
-                
-                # Perform MC reweighting
-                hist, bin_edges = reweight_mc_1d(
-                    rc, dV, w_WE, binsX, args.order, args.temperature
-                )
-                
-                # Convert to PMF
-                pmf_mc = histogram_to_pmf(hist, args.temperature)
-                pmf_mc = normalize_pmf(pmf_mc, args.energy_cutoff)
-                
-                # Write output
-                write_pmf_1d(f"{output_dir}/pmf_mc_1d.xvg", pmf_mc, bin_edges)
-                
-                pmf_data = {'mc': pmf_mc}
-                
-            elif args.dimensions == '2d':
-                # Load 2D data
-                cv1, cv2, dV, w_WE = load_data_2d(args.input)
-                
-                # Define bins
-                binsX = define_bins(cv1, args.bin_width_x, args.x_range)
-                binsY = define_bins(cv2, args.bin_width_y, args.y_range)
-                
-                # Perform MC reweighting
-                hist2D, edgesX, edgesY = reweight_mc_2d(
-                    cv1, cv2, dV, w_WE, binsX, binsY, args.order, args.temperature
-                )
-                
-                # Convert to PMF
-                pmf_mc = histogram_to_pmf(hist2D, args.temperature)
-                pmf_mc = normalize_pmf(pmf_mc, args.energy_cutoff)
-                
-                # Write output
-                write_pmf_2d(f"{output_dir}/pmf_mc_2d.xvg", pmf_mc, edgesX, edgesY)
-                
-                pmf_data = {'mc': pmf_mc}
->>>>>>> master
         
         # Generate plots if requested
         if args.plot:
             create_plots(pmf_data, str(output_dir), args.method, 
-<<<<<<< HEAD
                         args.dimensions if args.method == 'ce' else '2d')
-=======
-                        args.dimensions)
->>>>>>> master
         
 
         

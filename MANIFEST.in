@@ -8,3 +8,9 @@ recursive-include .github *
 global-exclude *.pyc
 global-exclude __pycache__
 global-exclude *.so
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> master

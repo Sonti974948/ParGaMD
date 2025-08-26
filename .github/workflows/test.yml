@@ -1,0 +1,46 @@
+name: Test ParGaMD Reweighting Tool
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, "3.10", "3.11"]
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run basic tests
+      run: |
+        python pargamd_reweighting.py --help
+        python pargamd_reweighting.py ce --help
+        python pargamd_reweighting.py mc --help
+    
+    - name: Test with example data
+      run: |
+        python pargamd_reweighting.py ce --input example_data_1d.dat --dimensions 1d --temperature 300 --output-dir test_output
+        ls -la test_output/
+    
+    - name: Test with plotting
+      run: |
+        python pargamd_reweighting.py ce --input example_data_1d.dat --dimensions 1d --temperature 300 --plot --output-dir test_output_plot
+        ls -la test_output_plot/
+
+
+
