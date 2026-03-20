@@ -111,7 +111,6 @@ python pargamd_reweighting.py ce --input data_1d.dat --dimensions 1d --temperatu
 python pargamd_reweighting.py ce --input data_2d.dat --dimensions 2d --temperature 300
 ```
 
-<<<<<<< HEAD
 #### MC Method (2D only)
 ```bash
 python pargamd_reweighting.py mc --input data_2d.dat --order 10 --temperature 300
@@ -308,12 +307,6 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-### Code Style
-
-- Follow PEP 8 style guidelines
-- Add type hints where appropriate
-- Include docstrings for all functions
-- Write tests for new features
 
 ## 📚 Citation
 
