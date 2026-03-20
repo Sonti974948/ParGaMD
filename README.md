@@ -325,12 +325,7 @@ If you use this tool in your research, please cite:
   title={Accelerating free energy exploration using parallelizable Gaussian accelerated molecular dynamics (ParGaMD)},
   author={Sonti, Siddharth and Thyagatur, Anugraha and Wan, Hung-Yu and Hamelynck, Maxen and Faller, Roland and Ahn, Surl-Hee},
   year={2025}
-=======
-@software{pargamd_reweighting,
-  title={ParGaMD Reweighting Tool},
-  author={Kidigannappa, Anugraha Thyagatur and Contributors},
-  year={2024},
-  url={https://github.com/yourusername/pargamd-reweighting}
+
 
 }
 ```
